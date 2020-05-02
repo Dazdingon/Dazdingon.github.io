@@ -43,3 +43,8 @@ function drawShip(){
 	ctx.fill();
 	ctx.restore();
 }
+
+function ChangeBackground ()
+{
+	document.body.style.background = "#EFEFEF";
+}
