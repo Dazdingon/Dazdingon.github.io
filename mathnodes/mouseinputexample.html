@@ -1,0 +1,29 @@
+<body style="background-color: black;">
+    <div style="position: absolute; left: 20px; top: 20px; width: 120px; height: 90px; border-style: solid; border-width: 1px; border-color: chocolate;"></div>
+    <div style="position: absolute; left: 160px; top: 20px; width: 120px; height: 90px; background-color: chocolate;"></div>
+    <div style="position: absolute; left: 300px; top: 20px; width: 120px; height: 90px; background-color: chocolate;"></div>
+    <div style="position: absolute; left: 440px; top: 20px; width: 120px; height: 90px; background-color: chocolate;"></div>
+
+    <div style="position: absolute; left: 10px; top: 10px; width: 20px; height: 30px; background-color: darkorange;" id='myMover'></div>
+
+    <script>
+
+        const mover = document.getElementById('myMover');
+        window.onmousemove = recieveInput;
+        var mousePosition = {x:0,y:0}
+
+        function recieveInput (event)
+        {
+            mousePosition.x = event.clientX;
+            mousePosition.y = event.clientY;
+        }
+
+        function displayInput ()
+        {
+            mover.style.left = mousePosition.x;
+            mover.style.top = mousePosition.y;
+            requestAnimationFrame(displayInput);
+        }displayInput();
+
+    </script>
+</body>
